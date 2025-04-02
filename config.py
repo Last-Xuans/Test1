@@ -14,6 +14,15 @@ LLM_API_CONFIG = {
     "MAX_TOKENS": 1000,
 }
 
+# Google搜索API配置
+GOOGLE_SEARCH_CONFIG = {
+    "ENABLED": os.getenv("ENABLE_WEB_SEARCH", "false").lower() == "true",
+    "API_KEY": os.getenv("GOOGLE_API_KEY", ""),
+    "SEARCH_ENGINE_ID": os.getenv("GOOGLE_SEARCH_ENGINE_ID", ""),
+    "MAX_RESULTS": 5,
+    "DAILY_LIMIT": 100  # 每日查询限额
+}
+
 # 检测阈值配置
 THRESHOLDS = {
     "EMOTION_WORDS_RATIO": 0.15,  # 情绪词比例阈值
